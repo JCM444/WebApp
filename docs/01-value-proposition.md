@@ -2,15 +2,29 @@
 
 ## Target Users and Their Problems
 
-A platform serves two distinct user groups, each with their own needs and motivations.
+Ziel sind Studierende und gegebenenfalls Schüler in Deutschland, die Unterstützung beim Lernen oder beim Erwerb neuer Fähigkeiten benötigen. Auf der anderen Seite dieselbe Zielgruppe, welche Hilfe anbieten möchte.
 
 ### Demand Side: [User Group]
 
 [Describe (a) who these users are (e.g., as persona) and (b) which problem or unmet need brings them to your platform. Be specific and grounded in reality with both the user and the problem description.]
 
+Persona Johannes (22 Jahre alt):
+- Student Wirtschaftsinformatik 4. Semester, HWR Berlin
+- Hat Python in mehreren Modulen und versteht die Grundlagen nicht
+- Bezahlte Privatnachhilfe kann er sich nicht leisten
+- Durch seinen Teilzeitjob gelingt es ihm nicht jede Vorlesung zu besuchen
+- Seine Kommilitonen im Kurs können ihm nicht helfen
+- Hat gute Kenntnisse im wirtschaftlichen Arbeiten
+
+
 ### Supply Side: [User Group]
 
 [Describe who these users are, what they have to offer, and which problem or need motivates them to participate. Again, be specific and grounded in reality.]
+
+Persona Sarah (25):
+- Studentin Wirtschaftsinformatik 7. Semester, HWR Berlin
+- Sie bringt Studiumsinhalte gerne näher, um den Stoff selbst zu verfestigen
+- 
 
 ## Our Platform Solution
 
