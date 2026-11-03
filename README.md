@@ -4,7 +4,7 @@
 
 | Name | Zielnote |
 |---|---|
-| Jakob Mehl | todo |
+| Jakob Mehl | 1.0 |
 | Helen Wolf | 1.0 |
 | Johannes Müller | todo |
 | Ahmed Bauer | 1.0 |
@@ -12,7 +12,9 @@
 ## Persönliche Lernziele
 
 ### Jakob Mehl
-- todo
+- Allgemeinverständnis im Programmieren erhöhen und Fähigkeiten verbessern
+- Git vollständig beherrschen
+- Systematisch Arbeiten beim Programmieren können
 
 ### Helen Wolf
 - Die Programmiersprache Python lernen und nutzen.
