@@ -5,7 +5,7 @@
 | Name | Zielnote |
 |---|---|
 | Jakob Mehl | todo |
-| Helen Wolf | todo |
+| Helen Wolf | 1.0 |
 | Johannes Müller | todo |
 | Ahmed Bauer | 1.0 |
 
@@ -15,7 +15,9 @@
 - todo
 
 ### Helen Wolf
-- todo
+- Die Programmiersprache Python lernen und nutzen.
+- Mit GitHub arbeiten, sowie die Zusammenarbeit im Team durch Git-Workflows nachzuvollziehen.
+- Product Discovery mit Design Thinking anwenden und zur Problemlösung nutzen.
 
 ### Johannes Müller
 - todo
