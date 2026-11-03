@@ -57,3 +57,16 @@ Illustrate the typical successful interaction with your platform from both user 
 ## Initial Target Scope (as per Assignment)
 
 [Include your visual scoping of the web app (e.g., UI screens scribbles), as elaborated for your Assignment at start of the project.]
+### 01 Startseite
+![](mockup-v1/01.png)
+### 02 Hilfe suchen
+![](mockup-v1/02.png)
+
+### 03 Hilfe anbieten
+![](mockup-v1/03.png)
+
+### 04 Angebotsdetails
+![](mockup-v1/04.png)
+
+### 05 Meine Anfragen
+![](mockup-v1/05.png)
