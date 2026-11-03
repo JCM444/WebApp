@@ -6,7 +6,7 @@
 |---|---|
 | Jakob Mehl | 1.0 |
 | Helen Wolf | 1.0 |
-| Johannes Müller | todo |
+| Johannes Müller | 1.0 |
 | Ahmed Bauer | 1.0 |
 
 ## Persönliche Lernziele
@@ -22,7 +22,8 @@
 - Product Discovery mit Design Thinking anwenden und zur Problemlösung nutzen.
 
 ### Johannes Müller
-- todo
+- Meine Python Kenntnisse verbessern und Flask kennenlernen.
+- Besser verstehen, wie Frontend, Backend und Datenbanken zusammenarbeiten.
 
 ### Ahmed Bauer
 - Erfahrungen in Python, Flask und SQLAlchemy sammeln und neue Technologien lernen.
