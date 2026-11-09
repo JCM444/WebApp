@@ -1,6 +1,4 @@
-# SkillSwap
-
-## Teammitglieder - Team: Landleben
+# Study Circle
 
 | Name | Zielnote |
 |---|---|
