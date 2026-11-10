@@ -2,97 +2,106 @@
 
 ## Target Users and Their Problems
 
-Ziel sind Studierende in Deutschland, die Unterstützung beim Lernen oder beim Erwerb neuer Fähigkeiten benötigen. Auf der anderen Seite dieselbe Zielgruppe, welche Hilfe anbieten möchte und dabei die Möglichkeit haben, sich eine kleinigkeit dazu zu verdienen.
+StudyCircle richtet sich an Studierende der HWR Berlin, die sich zum gemeinsamen Lernen treffen möchten. Supply und Demand Side sind dabei **dieselbe** Nutzergruppe mit demselben Ziel: **zusammen lernen**. Sie unterscheiden sich nur darin, wer eine Lernsession organisiert und wer ihr beitritt. Die Rollen können jederzeit wechseln.
 
-### Demand Side: Hilfesuchende Studenten
-
-
-**Persona Johannes (22 Jahre alt):**
-- Student Wirtschaftsinformatik 4. Semester, HWR Berlin
-- Hat Python in mehreren Modulen und versteht die Grundlagen nicht
-- Bezahlte Privatnachhilfe kann er sich nicht leisten
-- Durch seinen Teilzeitjob gelingt es ihm nicht jede Vorlesung zu besuchen
-- Seine Kommilitonen im Kurs können ihm nicht helfen
-
-**Das Problem:** Studeneten verstehen nicht alles in der Lehrveranstaltung und müssen oft viel Stoff eigenständig nacharbeiten. Hilfe gibt es oft zwar (Komolitonen, Tutorien, Chatgruppen, KI), ist aber nicht leicht zu finden, hängt vom persönlichen Umfeld ab, passt Zeitlich nicht oder ist nicht Modulspezifisch. Professionelle Hilfe ist für viele Studenten zu teuer.
-
-### Supply Side: Helfende Studenten
+Unsere Umfrage (54 gültige Antworten, Mehrfachnennungen möglich) zeigt:
+- **67 %** würden zur Prüfungsvorbereitung und Motivation lieber mit Kommilitonen lernen als nur mit KI.
+- **31 %** nennen die zeitliche Abstimmung als Hindernis, andere um Hilfe zu bitten.
+- **28 %** kennen niemanden, der ihnen beim Lernen helfen könnte.
 
 
-**Persona Sarah (25 Jahre alt):**
-- Studentin Wirtschaftsinformatik 7. Semester, HWR Berlin
-- Sie bringt Studiumsinhalte gerne näher, um den Stoff selbst zu verfestigen
-- Sucht nach einer Möglichkeit ihr Engagement ausßerhalb des Studiums zu zeigen
-- Sie fände einen kleinen nebenverdienst praktisch, was aber nicht ihre priorität ist
+Fast alle Befragten (98 %) nutzen KI, und 63 % finden sie schneller als andere zu fragen. StudyCircle ersetzt KI daher nicht, sondern setzt dort an, wo sie nicht reicht: beim gemeinsamen Üben und bei der Motivation.
 
-**Problem / Motivation:** Es gibt keine Möglihkeit, einfach, eigenes Wissen sichtbar zu machen und Hilfesuchende außerhalb des eigenen Umfelds zu finden. Sarah möchte Felxibel helfen können und dafür eventuell eine vergütung erhalten. Tutorien sind formal und zeitlich gebunden. Es gibt einige Studenten, die die ehrenamtlich helfen möchten, für einen Nachweis ihres Engagements oder einfach um den Stoff für sich selbst zu festigen.
+### Demand Side: Teilnehmende
+
+**Persona Johannes (23 Jahre alt)**
+- Student Wirtschaftsinformatik im 3. Semester
+- Bereitet sich auf die Programmierung-Klausur vor
+- Lernt meistens alleine mit KI und verliert dabei die Motivation
+- Kennt in seinem Kurs kaum jemanden zum Lernen
+- Hat durch seinen Teilzeitjob wenig Zeit für Terminabsprachen
+
+**Problem:** Johannes möchte einer Lerngruppe beitreten, findet aber keine. WhatsApp-Gruppen erreichen nur andere Kurse, und in seinem organisiert selten jemand ein Treffen.
+
+### Supply Side: Organisierende
+
+**Persona Sarah (22 Jahre alt)**
+- Studentin BWL im 3. Semester
+- Belegt dasselbe Statistik-Modul wie Johannes
+- Lernt besser mit festen Terminen und anderen Leuten
+- Ihre alte Lerngruppe hat sich aufgelöst
+- Plant gern selbst, wenn sie weiß, dass andere mitmachen
+
+**Problem:** Sarah würde eine Lernsession organisieren, weiß aber nicht, wen sie außerhalb ihres Kurses erreichen kann. Ihre Motivation ist Eigeninteresse: Sie will selbst die Klausur bestehen.
+
+
 
 ## Our Platform Solution
-**Skillswap** ist eine Web-Plattform indem Studenten Hilfe von anderen Studenten finden, aber auch gleichzeitig ihre Hilfe anbieten können. Helfende können Angebote veröffentlichen, für Kurse oder Themen die sie schon absolviert haben. Hilfesuchende finden diese Angebote, schicken eine Anfrage und vereinbaren dann einen Termin. Ein Student kann beide Seiten annehemn.
 
-Ausgetauscht werden Wissen und Zeit in Form von 1:1 Lernterminen, kostenlos oder gegen einen von den Anbietenden festgelegten Preis. Die Bezahlung wird direkt zwischen den Beteiligten abgesprochen und läuft **nicht** über SkillSwap.
+**StudyCircle ist eine Plattform, auf der Studierende Lernsessions organisieren, finden und ihnen direkt beitreten können, vorallem über den eigenen Kurs hinaus.**
 
-**SkillSwap dient ausdrücklich dem Verstehen von Lerninhalten, nicht dem Bearbeiten von Prüfungsleistungen**. Benotete Abgaben, Hausarbeiten, Projektarbeiten und Prüfungen sind ausgeschlossen. Angebote beziehen sich deshalb auf Module und Themen, nicht auf konkrete Abgaben. Die Registrierung ist nur mit einer Uni-Mailadresse möglich, sodass jede Person nur ein Konto anlegen kann (wird im Prototyp simuliert).
+Wer eine Session organisiert, legt Modul, Titel, Beschreibung, Termin, Ort und maximale Teilnehmerzahl fest. Andere treten direkt bei, ohne Anfrage und ohne Terminabstimmung. Alle lernen auf eigenem Niveau, niemand muss Experte sein.
+
+Im Unterschied zu WhatsApp-Gruppen oder Tutorien sind die  Lernsessions von StudyCircle **Modulen zugeordnet** und gehen **über den eigenen Kurs hinaus**.
 
 ### Solution for the Demand Side
 
-- **Gezielt Hilfe finden:** Angebote lassen sich nach Modul oder Thema suchen und filtern, hochschul- und uniweit statt nur im eigenen Kurs.
-- **Modulspezifisch:** Helfende kennen dasselbe Modul an derselben Hochschule, oft mit denselben Dozierenden und Prüfungen. Das kann weder eine externe Nachhilfefirma noch ein KI-Tool anbieten.
-- **Niedrigere Hemmschwelle:** private Anfrage an eine Person statt einer öffentlichen Frage in einer großen Chatgruppe
-- **Flexibel:** die Termine werden direkt vereinbart und passen so z. B. zu einem Nebenjob.
-- **Bezahlbar und transparent:** Der Preis (kostenlos oder € pro Stunde) steht vor der Anfrage fest.
-
-**Warum SkillSwap** statt einer Nachhilfefirma? Studenten haben nicht die Qualifikation einer professionellen Nachhilfefirma und das versprechen sie auch nicht. Deshalb fallen die Preise Entsprechend niedriger aus. Dafür kennen sie genau dieses Modul an der Uni/Hochschule, sind flexibel, erreichbar und ermöglichen Vernetzung mit Studenten, die dasselbe studieren und dieselben Kurse besucht haben.
+- **Finden:** Sessions nach Modul oder Thema suchen und filtern.
+- **Beitreten:** Termin, Ort und freie Plätze sind sichtbar mit einem Klick.
+- **Selbst starten:** Findet man nichts Passendes, kann man direkt eine eigene Session organisieren.
 
 ### Solution for the Supply Side
 
-- **Sichtbarkeit:** Ein Angebot wird einmal erstellt und ist für alle Studierenden der Uni/Hochschule sichtbar.
-- **Selbstbestimmt:** Helfende legen Themen, Verfügbarkeit und Preis selbst fest und nehmen jede Anfrage selbst an oder lehnen sie ab. Es gibt keinen Bewerbungsprozess und keine festen Zeiten.
-- **Vergütung:** Helfende können einen eigenen Stundenpreis festlegen. Die Bezahlung wird direkt abgesprochen.
-- **Verfestigung und Vernetzung:** Durch das Erklären wird der eigene Stoff gefestigt, und es entstehen Kontakte im eigenen Studiengang.
-- **Nachweis:** Für kostenlose Lerntermine gibt es eine Ehrenamtsbescheinigung und für alle Termine eine separate Teilnahmebestätigung. Ziel für den Echtbetrieb ist eine Zertifizierung durch die HWR. Im Prototyp sind die Bescheinigungen private SkillSwap-Dokumente.
+- **Mitlernende erreichen:** Eine Session ist für alle angemeldeten Studierende sichtbar.
+- **Selbst bestimmen:** Thema, Termin, Ort und Gruppengröße festlegen.
+- **Weniger Abstimmung:** Interessierte treten direkt bei, ohne Nachrichten oder Anfragen.
 
 ## Happy Paths
 
-Die beiden Seiten interagieren über eine Anfrage: Sarah veröffentlicht ein Angebot, Johannes findet es und sendet eine Anfrage (Status offen). Sarah nimmt die Anfrage an (angenommen) oder lehnt sie ab (abgelehnt). Aus einer angenommenen Anfrage wird ein Lerntermin, den beide in ihrem Dashboard sehen.
+Sarah organisiert eine Lernsession mit festem Termin. Johannes findet sie unter „Entdecken“ und tritt direkt bei. Beide sehen die Session unter „Meine Sessions“ und lernen gemeinsam.
 
-![](mockup-v1/HappyPath.jpeg)
+![](assets/images//HappyPath.jpeg)
 
 ### Demand-Side Happy Path
 
-1. **Registrierung / Login:** Johannes meldet sich mit seiner Uni-Mailadresse an.
-2. **Angebote suchen:** Er sucht nach „Python“ und filtert nach Modul.
-3. **Angebot ansehen:** Er öffnet Sarahs Angebot und sieht Beschreibung, Verfügbarkeit und Preis.
-4. **Anfrage senden:** Er beschreibt, wobei er Hilfe braucht (*„Ich verstehe Schleifen und Funktionen nicht“*), und nennt eine Wunschzeit. Status: offen.
-5. **Dashboard:** Er sieht, dass Sarah die Anfrage angenommen hat, und findet den Termin mit Datum, Uhrzeit und Ort.
 
-![](mockup-v1/DS_HappyPath.jpeg)
+1. **Login:** Johannes meldet sich mit seiner Hochschul-Mailadresse an.
+2. **Entdecken:** Er sucht nach „Statistik“ und findet Sarahs Session „Hypothesentests“.
+3. **Session-Details:** Er sieht Beschreibung, Termin, Ort und freie Plätze.
+4. **Beitreten:** Mit „Jetzt beitreten“ reserviert er direkt einen Platz.
+5. **Meine Sessions:** Die Session erscheint unter „Meine Teilnahmen“, bei Bedarf kann er absagen.
+6. **Lernen:** Johannes trifft sich zum Termin mit der Gruppe.
+
+![](assets/images//DS_HappyPath.jpeg)
+
 
 ### Supply-Side Happy Path
 
 
-1. **Registrierung / Login:** Sarah meldet sich mit ihrer Uni-Mailadresse an.
-2. **Angebot erstellen:** Sie legt ein Angebot für Python an, mit Beschreibung, Verfügbarkeit, Ort und Stundenpreis.
-3. **Dashboard:** Sie sieht die neue Anfrage von Johannes mit seiner Problembeschreibung.
-4. **Annehmen und Termin festlegen:** Sie nimmt die Anfrage an und legt Datum, Uhrzeit, Ort und Dauer fest.
-5. **Lerntermin:** Beide treffen sich und die Bezahlung regeln sie direkt miteinander.
 
-![](mockup-v1/SS_HappyPath.jpeg)
+1. **Login:** Sarah meldet sich mit ihrer Hochschul-Mailadresse an.
+2. **Organisieren:** Sie erstellt eine neue Session im Modul Statistik.
+3. **Details festlegen:** Sie gibt Titel, Beschreibung, Termin, Ort und maximale Teilnehmerzahl an.
+4. **Veröffentlichen:** Die Session ist ab sofort für alle Studierenden des Moduls sichtbar.
+5. **Meine Sessions:** Unter „Von mir organisiert“ sieht sie, wer beigetreten ist, und kann die Session bei Bedarf absagen.
+6. **Lernen:** Sarah trifft sich zum Termin mit der Gruppe und lernt selbst mit.
+
+![](assets/images//SS_HappyPath.jpeg)
 
 ---
 
 ## Initial Target Scope (as per Assignment)
 
 ### 01 Startseite
-![](mockup-v1/01.png)
+![](assets/images//01.png)
 ### 02 Hilfe suchen
-![](mockup-v1/02.png)
+![](assets/images//02.png)
 
 ### 03 Hilfe anbieten
-![](mockup-v1/03.png)
+![](assets/images//03.png)
 
 ### 04 Angebotsdetails
-![](mockup-v1/04.png)
+![](assets/images//04.png)
 
 ### 05 Meine Anfragen
-![](mockup-v1/05.png)
+![](assets/images//05.png)
