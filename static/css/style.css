@@ -1,0 +1,55 @@
+:root {
+    --sc-primary: #1B2447;
+    --sc-primary-hover: #2D3A72;
+    --sc-highlight: #FFE23D;
+    --sc-background: #fff;
+
+    --bs-primary: var(--sc-primary);
+    --bs-primary-rgb: 27, 36, 71;
+    --bs-highlight-bg: var(--sc-highlight);
+    --bs-highlight-color: var(--sc-primary);
+    --bs-body-font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.navbar {
+    height: 80px;
+    --bs-navbar-color: #fff;
+    --bs-navbar-hover-color: rgb(255 255 255 / 70%);
+}
+
+main.container-fluid {
+    padding: 80px;
+}
+
+mark {
+    display: inline-block;
+    line-height: 1;
+    padding: 0 .05em;
+}
+
+.btn {
+    --bs-btn-border-radius: 4px;
+    --bs-btn-padding-x: 24px;
+    --bs-btn-padding-y: 12px;
+    --bs-btn-font-family: "Barlow", sans-serif;
+    --bs-btn-font-size: 16px;
+    --bs-btn-font-weight: 600;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--sc-primary);
+    --bs-btn-border-color: var(--sc-primary);
+    --bs-btn-hover-bg: var(--sc-primary-hover);
+    --bs-btn-hover-border-color: var(--sc-primary-hover);
+    --bs-btn-active-bg: var(--sc-primary-hover);
+    --bs-btn-active-border-color: var(--sc-primary-hover);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--sc-primary);
+    --bs-btn-border-color: var(--sc-primary);
+    --bs-btn-hover-bg: var(--sc-primary);
+    --bs-btn-hover-border-color: var(--sc-primary);
+    --bs-btn-active-bg: var(--sc-primary);
+    --bs-btn-active-border-color: var(--sc-primary);
+}
