@@ -31,10 +31,10 @@
                         </span>
                     </a>
                 </div>
-            {% elif request.endpoint == 'login' %}
+            {% elif request.endpoint == 'identity.login' %}
                 <a class="btn btn-outline-light py-2" href="{{ url_for('index') }}">Startseite</a>
             {% else %}
-                <a class="btn btn-outline-light py-2" href="{{ url_for('login') }}">Anmelden</a>
+                <a class="btn btn-outline-light py-2" href="{{ url_for('identity.login') }}">Anmelden</a>
             {% endif %}
         </div>
     </nav>
