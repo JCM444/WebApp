@@ -1,4 +1,4 @@
-from flask import redirect, request, url_for
+from flask import redirect, request, url_for, session
 
 PUBLIC_ENDPOINTS = {
   "index",
@@ -13,4 +13,5 @@ def require_login():
     if request.endpoint is None or request.endpoint in PUBLIC_ENDPOINTS:
         return
 
-    return redirect(url_for("identity.login"))
+    if not session.get("authenticated"):
+        return redirect(url_for("identity.login"))

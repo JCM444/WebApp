@@ -1,7 +1,8 @@
 import secrets
 
-from flask import Blueprint, redirect, render_template, session, url_for
-from .studid import create_verification
+from flask import Blueprint, redirect, render_template, session, url_for, abort, request
+from requests import RequestException
+from .studid import create_verification, get_verification
 
 
 bp = Blueprint("identity", __name__)
@@ -28,4 +29,38 @@ def start_login():
 
 @bp.route("/login/callback")
 def callback():
-    return "TODO: callback"
+    verification_id = request.args.get("verificationId")
+
+    # browsercheck
+    if not verification_id or verification_id != session.get("verification_id"):
+        abort(403)
+
+    token = pending_verifications.get(verification_id)
+    if not token:
+        abort(400)
+
+    #ask studid
+    try:
+        result = get_verification(verification_id, token)
+    except RequestException:
+        abort(502, "studid error.")
+
+    identity = result.get("session")
+
+    # remove used verification tokens
+    pending_verifications.pop(verification_id, None)
+    session.pop("verification_id", None)
+
+    identifier = identity.get("authIdentifier")
+    if not identifier:
+        abort(403, "'authIdentifier' fehlt. Keine eindeutige Nutzerzuordnung möglich.")
+
+    session.clear()
+    session["authenticated"] = True
+
+    return redirect(url_for("index"))
+
+@bp.post("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("index"))

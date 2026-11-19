@@ -19,7 +19,7 @@
                 <img src="{{ url_for('static', filename='assets/icon.svg') }}" width="40" height="40" alt="">
                 <a class="text-decoration-none text-white fs-2 fw-semibold" href="{{ url_for('index') }}">Study Circle</a>
             </div>
-            {% if false %}
+            {% if session.get("authenticated") %}
                 <div class="navbar-nav flex-row align-items-center gap-4">
                     <a class="nav-link" href="{{ url_for('index') }}">Entdecken</a>
                     <a class="nav-link" href="{{ url_for('index') }}">Organisieren</a>
