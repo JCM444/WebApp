@@ -55,6 +55,9 @@ def callback():
     if not identifier:
         abort(403, "'authIdentifier' fehlt. Keine eindeutige Nutzerzuordnung möglich.")
 
+    if identity.get("entityId") != "https://identity.hwr-berlin.de/idp/shibboleth":
+        abort(403, "Nur HWR Berlin erlaubt.")
+        
     session.clear()
     session["authenticated"] = True
 
