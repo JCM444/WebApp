@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Mein Profil – Study Circle{% endblock %}
+
+{% block content %}
+  <h1 class="display-5 fw-semibold text-primary">Mein Profil</h1>
+
+  <p class="fs-5 text-primary">
+    Du bist erfolgreich bei Study Circle angemeldet.
+  </p>
+
+  <form method="post" action="{{ url_for('identity.logout') }}">
+    <button type="submit" class="btn btn-outline-danger">
+      Abmelden
+    </button>
+  </form>
+{% endblock %}

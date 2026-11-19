@@ -67,3 +67,7 @@ def callback():
 def logout():
     session.clear()
     return redirect(url_for("index"))
+
+@bp.get("/profile")
+def profile():
+    return render_template("profile.html")
