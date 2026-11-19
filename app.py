@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
+import os
 
 from features.identity.routes import bp as identity_bp
 from features.identity.auth import require_login
@@ -8,6 +9,10 @@ from features.identity.auth import require_login
 app = Flask(__name__)
 
 bootstrap = Bootstrap5(app)
+
+app.config.from_mapping(
+    SECRET_KEY = 'secret_key_just_for_dev_environment',
+)
 
 app.register_blueprint(identity_bp)
 app.before_request(require_login)

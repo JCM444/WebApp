@@ -9,5 +9,7 @@
   Melde dich mit dem Login deiner Hochschule oder Universität an. Die Anmeldung läuft über studid. Study Circle speichert kein Passwort.
 </p>
 
-<a class="btn btn-primary" href="#">Mit studid anmelden</a>
+<a class="btn btn-primary" href="{{ url_for('identity.start_login') }}">
+  Mit studid anmelden
+</a>
 {% endblock %}

@@ -1,6 +1,12 @@
 from flask import redirect, request, url_for
 
-PUBLIC_ENDPOINTS = {"index", "identity.login", "static"}
+PUBLIC_ENDPOINTS = {
+  "index",
+  "identity.login",
+  "identity.start_login",
+  "identity.callback",
+  "static"
+}
 
 
 def require_login():
