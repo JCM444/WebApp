@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
-from flask_sqlalchemy import SQLAlchemy
 from db import init_db
 
 from features.identity.routes import bp as identity_bp
