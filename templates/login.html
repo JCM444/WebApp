@@ -12,4 +12,31 @@
 <a class="btn btn-primary" href="{{ url_for('identity.start_login') }}">
   Mit studid anmelden
 </a>
+
+<div class="container border border-danger p-3 my-4">
+  <h5 class="text-danger">Demozugänge</h5>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Szenario</th>
+        <th>Aktion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Johannes</td>
+        <td>Session finden und beitreten</td>
+        <td><button class="btn btn-outline-primary">Einloggen</button></td>
+      </tr>
+      <tr>
+        <td>Sarah</td>
+        <td>Session erstellen und verwalten</td>
+        <td><a class="btn btn-outline-primary">Einloggen</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 {% endblock %}
