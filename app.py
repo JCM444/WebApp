@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from features.identity.routes import bp as identity_bp
 from features.identity.auth import require_login
+from features.discovery.routes import bp as discovery_bp
 
 app = Flask(__name__)
 
@@ -17,6 +18,7 @@ app.config.from_mapping(
 db = SQLAlchemy(app)
 
 app.register_blueprint(identity_bp)
+app.register_blueprint(discovery_bp)
 app.before_request(require_login)
 
 @app.route('/')
