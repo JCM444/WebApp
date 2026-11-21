@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
+from db import init_db
 
 from features.identity.routes import bp as identity_bp
 from features.identity.auth import require_login
@@ -15,7 +16,7 @@ app.config.from_mapping(
     SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db',
 )
 
-db = SQLAlchemy(app)
+init_db(app)
 
 app.register_blueprint(identity_bp)
 app.register_blueprint(discovery_bp)
