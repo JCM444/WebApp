@@ -2,6 +2,9 @@ import secrets
 
 from flask import Blueprint, redirect, render_template, session, url_for, abort, request
 from requests import RequestException
+
+from db import db
+from .models import User
 from .studid import create_verification, get_verification
 
 
@@ -59,8 +62,33 @@ def callback():
         abort(403, "Nur HWR Berlin erlaubt.")
         
     session.clear()
-    session["authenticated"] = True
 
+    user = User.query.filter_by(auth_identifier=identifier).first()
+    if not user:
+        session["pending_identifier"] = identifier
+        return redirect(url_for("identity.register"))
+
+    session["authenticated"] = True
+    session["user_id"] = user.id
+    return redirect(url_for("index"))
+
+@bp.route("/register", methods=["GET", "POST"])
+def register():
+    identifier = session.get("pending_identifier")
+    if not identifier:
+        return redirect(url_for("identity.login"))
+
+    name = request.form.get("display_name", "").strip()[:100]
+    if request.method == "GET" or not name:
+        return render_template("register.html")
+
+    user = User(auth_identifier=identifier, display_name=name)
+    db.session.add(user)
+    db.session.commit()
+
+    session.clear()
+    session["authenticated"] = True
+    session["user_id"] = user.id
     return redirect(url_for("index"))
 
 @bp.post("/logout")
@@ -70,4 +98,5 @@ def logout():
 
 @bp.get("/profile")
 def profile():
-    return render_template("profile.html")
+    user = User.query.filter_by(id=session.get("user_id")).first()
+    return render_template("profile.html", user=user)

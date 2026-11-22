@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "_macros.html" import field %}
+
+{% block title %}Willkommen – Study Circle{% endblock %}
+
+{% block content %}
+<h1 class="display-5 fw-semibold text-primary">Willkommen bei Study Circle</h1>
+
+<p class="fs-5 text-primary">Wie lautet dein Name?</p>
+
+<form method="post" class="w-25">
+  {{ field("display_name", "Anzeigename", required=True) }}
+  <button class="btn btn-primary">Weiter</button>
+</form>
+{% endblock %}

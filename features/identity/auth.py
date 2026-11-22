@@ -5,6 +5,7 @@ PUBLIC_ENDPOINTS = {
   "identity.login",
   "identity.start_login",
   "identity.callback",
+  "identity.register",
   "static"
 }
 
