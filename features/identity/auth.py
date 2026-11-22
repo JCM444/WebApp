@@ -18,6 +18,11 @@ def current_user():
     return db.session.get(User, user_id) if user_id else None
 
 
+def login_user(user):
+    session.clear()
+    session["user_id"] = user.id
+
+
 def require_login():
     if request.endpoint is None or request.endpoint in PUBLIC_ENDPOINTS:
         return

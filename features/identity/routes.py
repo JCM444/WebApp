@@ -4,15 +4,13 @@ from flask import Blueprint, redirect, render_template, session, url_for, abort,
 from requests import RequestException
 
 from db import db
-from .auth import current_user
+from .auth import current_user, login_user
 from .forms import DisplayNameForm
 from .models import User
 from .studid import create_verification, get_verification
 
 
 bp = Blueprint("identity", __name__, template_folder="templates")
-
-pending_verifications = {}
 
 @bp.route('/login')
 def login():
@@ -27,8 +25,8 @@ def start_login():
         url_for("identity.callback", _external=True)
 )
 
-    pending_verifications[verification["id"]] = token
     session["verification_id"] = verification["id"]
+    session["verification_token"] = token
 
     return redirect(verification["link"])
 
@@ -40,21 +38,17 @@ def callback():
     if not verification_id or verification_id != session.get("verification_id"):
         abort(403)
 
-    token = pending_verifications.get(verification_id)
-    if not token:
-        abort(400)
-
     #ask studid
     try:
-        result = get_verification(verification_id, token)
+        result = get_verification(verification_id, session["verification_token"])
     except RequestException:
         abort(502, "studid error.")
 
     identity = result.get("session")
 
     # remove used verification tokens
-    pending_verifications.pop(verification_id, None)
     session.pop("verification_id", None)
+    session.pop("verification_token", None)
 
     identifier = identity.get("authIdentifier")
     if not identifier:
@@ -63,14 +57,13 @@ def callback():
     if identity.get("entityId") != "https://identity.hwr-berlin.de/idp/shibboleth":
         abort(403, "Nur HWR Berlin erlaubt.")
         
-    session.clear()
-
     user = User.query.filter_by(auth_identifier=identifier).first()
     if not user:
+        session.clear()
         session["pending_identifier"] = identifier
         return redirect(url_for("identity.register"))
 
-    session["user_id"] = user.id
+    login_user(user)
     return redirect(url_for("index"))
 
 @bp.route("/register", methods=["GET", "POST"])
@@ -87,8 +80,7 @@ def register():
     db.session.add(user)
     db.session.commit()
 
-    session.clear()
-    session["user_id"] = user.id
+    login_user(user)
     return redirect(url_for("index"))
 
 @bp.post("/logout")
