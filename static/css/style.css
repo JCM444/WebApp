@@ -17,6 +17,18 @@
     --bs-navbar-hover-color: rgb(255 255 255 / 70%);
 }
 
+.avatar {
+    --avatar-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    color: var(--sc-primary);
+    background-color: #fff;
+}
+
 main.container-fluid {
     padding: 80px;
 }
