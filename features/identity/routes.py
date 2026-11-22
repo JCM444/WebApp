@@ -9,13 +9,13 @@ from .models import User
 from .studid import create_verification, get_verification
 
 
-bp = Blueprint("identity", __name__)
+bp = Blueprint("identity", __name__, template_folder="templates")
 
 pending_verifications = {}
 
 @bp.route('/login')
 def login():
-    return render_template("login.html")
+    return render_template("identity/login.html")
 
 @bp.route("/login/start")
 def start_login():
@@ -80,7 +80,7 @@ def register():
 
     form = DisplayNameForm()
     if not form.validate_on_submit():
-        return render_template("register.html", form=form)
+        return render_template("identity/register.html", form=form)
 
     user = User(auth_identifier=identifier, display_name=form.display_name.data.strip())
     db.session.add(user)
@@ -106,4 +106,4 @@ def profile():
         db.session.commit()
         return redirect(url_for("identity.profile"))
 
-    return render_template("profile.html", user=user, form=form)
+    return render_template("identity/profile.html", user=user, form=form)
