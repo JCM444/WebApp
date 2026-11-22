@@ -14,5 +14,5 @@ def require_login():
     if request.endpoint is None or request.endpoint in PUBLIC_ENDPOINTS:
         return
 
-    if not session.get("authenticated"):
+    if not session.get("user_id"):
         return redirect(url_for("identity.login"))

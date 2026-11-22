@@ -68,7 +68,6 @@ def callback():
         session["pending_identifier"] = identifier
         return redirect(url_for("identity.register"))
 
-    session["authenticated"] = True
     session["user_id"] = user.id
     return redirect(url_for("index"))
 
@@ -87,7 +86,6 @@ def register():
     db.session.commit()
 
     session.clear()
-    session["authenticated"] = True
     session["user_id"] = user.id
     return redirect(url_for("index"))
 
