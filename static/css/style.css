@@ -27,6 +27,37 @@ mark {
     padding: 0 .05em;
 }
 
+.form-control,
+.form-select {
+    padding-block: 6px;
+    padding-left: 8px;
+    color: var(--sc-primary);
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--sc-primary);
+    border-radius: 0;
+}
+
+.form-control:focus,
+.form-select:focus {
+    color: var(--sc-primary);
+    background-color: transparent;
+    border-color: var(--sc-primary);
+    box-shadow: 0 1px 0 var(--sc-primary);
+}
+
+.form-control::placeholder {
+    color: rgb(var(--bs-primary-rgb) / 60%);
+}
+
+.form-label {
+    margin-bottom: 4px;
+    padding-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sc-primary);
+}
+
 .btn {
     --bs-btn-border-radius: 4px;
     --bs-btn-padding-x: 24px;
