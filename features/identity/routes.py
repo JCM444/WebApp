@@ -95,7 +95,15 @@ def logout():
     session.clear()
     return redirect(url_for("index"))
 
-@bp.get("/profile")
+@bp.route("/profile", methods=["GET", "POST"])
 def profile():
     user = User.query.filter_by(id=session.get("user_id")).first()
-    return render_template("profile.html", user=user)
+
+    form = DisplayNameForm(obj=user)
+    form.submit.label.text = "Speichern"
+    if form.validate_on_submit():
+        user.display_name = form.display_name.data.strip()
+        db.session.commit()
+        return redirect(url_for("identity.profile"))
+
+    return render_template("profile.html", user=user, form=form)

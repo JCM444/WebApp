@@ -1,13 +1,21 @@
 {% extends "base.html" %}
+{% from "bootstrap5/form.html" import render_form %}
 
 {% block title %}Mein Profil – Study Circle{% endblock %}
 
 {% block content %}
-  <h1 class="display-5 fw-semibold text-primary">Mein Profil</h1>
+  <h1 class="display-5 fw-semibold text-primary mb-4">Mein Profil</h1>
 
-  <p class="fs-5 text-primary">
-    Angemeldet als <strong>{{ user.display_name }}</strong>
-  </p>
+  <div class="d-flex align-items-center gap-3 mb-4">
+    <span class="avatar bg-primary text-white fs-2" style="--avatar-size: 60px">
+      <i class="bi bi-person-fill"></i>
+    </span>
+    <span class="fs-3 fw-semibold text-primary">{{ user.display_name }}</span>
+  </div>
+
+  <div class="border rounded-1 p-4 mb-5" style="max-width: 400px">
+    {{ render_form(form) }}
+  </div>
 
   <form method="post" action="{{ url_for('identity.logout') }}">
     <button type="submit" class="btn btn-outline-danger">
