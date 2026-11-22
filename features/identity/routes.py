@@ -4,6 +4,7 @@ from flask import Blueprint, redirect, render_template, session, url_for, abort,
 from requests import RequestException
 
 from db import db
+from .auth import current_user
 from .forms import DisplayNameForm
 from .models import User
 from .studid import create_verification, get_verification
@@ -97,7 +98,7 @@ def logout():
 
 @bp.route("/profile", methods=["GET", "POST"])
 def profile():
-    user = User.query.filter_by(id=session.get("user_id")).first()
+    user = current_user()
 
     form = DisplayNameForm(obj=user)
     form.submit.label.text = "Speichern"

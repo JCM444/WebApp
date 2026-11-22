@@ -13,11 +13,15 @@ PUBLIC_ENDPOINTS = {
 }
 
 
+def current_user():
+    user_id = session.get("user_id")
+    return db.session.get(User, user_id) if user_id else None
+
+
 def require_login():
     if request.endpoint is None or request.endpoint in PUBLIC_ENDPOINTS:
         return
 
-    user_id = session.get("user_id")
-    if not user_id or not db.session.get(User, user_id):
+    if not current_user():
         session.clear()
         return redirect(url_for("identity.login"))
