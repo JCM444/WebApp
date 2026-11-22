@@ -1,6 +1,0 @@
-{% macro field(name, label, type="text", required=False) %}
-<div class="mb-3">
-  <label class="form-label" for="{{ name }}">{{ label }}</label>
-  <input class="form-control" type="{{ type }}" id="{{ name }}" name="{{ name }}"{% if required %} required{% endif %}>
-</div>
-{% endmacro %}

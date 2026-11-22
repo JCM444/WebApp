@@ -4,6 +4,7 @@ from flask import Blueprint, redirect, render_template, session, url_for, abort,
 from requests import RequestException
 
 from db import db
+from .forms import DisplayNameForm
 from .models import User
 from .studid import create_verification, get_verification
 
@@ -77,11 +78,11 @@ def register():
     if not identifier:
         return redirect(url_for("identity.login"))
 
-    name = request.form.get("display_name", "").strip()[:100]
-    if request.method == "GET" or not name:
-        return render_template("register.html")
+    form = DisplayNameForm()
+    if not form.validate_on_submit():
+        return render_template("register.html", form=form)
 
-    user = User(auth_identifier=identifier, display_name=name)
+    user = User(auth_identifier=identifier, display_name=form.display_name.data.strip())
     db.session.add(user)
     db.session.commit()
 
