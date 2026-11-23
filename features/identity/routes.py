@@ -57,7 +57,7 @@ def callback():
     if identity.get("entityId") != "https://identity.hwr-berlin.de/idp/shibboleth":
         abort(403, "Nur HWR Berlin erlaubt.")
         
-    user = User.query.filter_by(auth_identifier=identifier).first()
+    user = db.session.execute(db.select(User).filter_by(auth_identifier=identifier)).scalar_one_or_none()
     if not user:
         session.clear()
         session["pending_identifier"] = identifier
