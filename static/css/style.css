@@ -29,8 +29,14 @@
     background-color: #fff;
 }
 
+.navbar > .container-fluid,
 main.container-fluid {
-    padding: 80px;
+    max-width: 1440px;
+    padding-inline: 80px;
+}
+
+main.container-fluid {
+    padding-block: 80px;
 }
 
 mark {
