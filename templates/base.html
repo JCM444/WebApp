@@ -17,7 +17,7 @@
         <div class="container">
             <div class="d-flex align-items-center gap-2 navbar-brand">
                 <img src="{{ url_for('static', filename='assets/icon.svg') }}" width="40" height="40" alt="">
-                <a class="text-decoration-none text-white fs-2 fw-semibold" href="{{ url_for('discovery.index') }}">Study Circle</a>
+                <a class="text-decoration-none text-white fs-2 fw-semibold" href="{{ url_for('index') }}">Study Circle</a>
             </div>
             {% if session.get("user_id") %}
                 <div class="navbar-nav flex-row align-items-center gap-4">

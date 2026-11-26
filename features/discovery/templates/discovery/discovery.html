@@ -3,4 +3,14 @@
 {% block title %} Entdecken – Study Circle{% endblock %}
 
 {% block content %}
-{% endblock %}
+<h1>Sessions entdecken</h1>
+{%for s in sessions %}
+<div>   
+    <h2>{{s.title}}</h2>
+    <p>{{s.module}}, {{s.date.strftime("%d.%m.%Y %H:%M")}}Uhr</p>
+</div>
+{%else%}
+<p>Keine Sessions vorhanden</p>
+{%endfor%}
+
+{%endblock%}
