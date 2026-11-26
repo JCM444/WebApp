@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap5
+from flask_wtf import CSRFProtect
 from db import init_db
 
 from features.identity.routes import bp as identity_bp
@@ -9,7 +10,8 @@ from features.organization.routes import bp as organization_bp
 
 app = Flask(__name__)
 
-bootstrap = Bootstrap5(app)
+Bootstrap5(app)
+CSRFProtect(app)
 
 app.config.from_mapping(
     SECRET_KEY = 'secret_key_just_for_dev_environment',
